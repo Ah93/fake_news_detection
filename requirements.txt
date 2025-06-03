@@ -1,7 +1,8 @@
 streamlit
-torch
 pandas
 numpy
+torch
+tensorflow==2.10.1
 scikit-learn
 nltk
 transformers
