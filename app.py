@@ -4,6 +4,8 @@ import torch
 import pickle
 import numpy as np
 from keras_preprocessing.sequence import pad_sequences
+from keras_preprocessing.text import tokenizer_from_json
+
 from model import TransformerGRUClassifier
 from utils import clean_text
 
@@ -12,8 +14,8 @@ MAX_SEQ_LEN = 100  # Ensure this matches what was used in training
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load tokenizer and embedding matrix
-with open("tokenizer.pkl", "rb") as f:
-    tokenizer = pickle.load(f)
+with open("tokenizer.json") as f:
+    tokenizer = tokenizer_from_json(f.read())
 
 embedding_matrix = np.load("embedding_matrix.npy")
 
