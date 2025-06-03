@@ -3,7 +3,7 @@ import streamlit as st
 import torch
 import pickle
 import numpy as np
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+from keras_preprocessing.sequence import pad_sequences
 from model import TransformerGRUClassifier
 from utils import clean_text
 
