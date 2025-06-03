@@ -71,7 +71,8 @@ if st.button("🔎 Analyze"):
     if user_input.strip() == "":
         st.warning("⚠️ Please enter a news statement.")
     else:
-        label, prob = predict(user_input)
+        with st.spinner("Analyzing the news... 🧠"):
+            label, prob = predict(user_input)
 
         label_text = "✅ REAL" if label == 1 else "❌ FAKE"
         confidence = prob[label]
